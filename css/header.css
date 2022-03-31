@@ -1,0 +1,134 @@
+
+
+#header{
+    transition: all 300ms linear;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.header-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+}
+
+.header-logo{
+    display: flex;
+    align-items: center;
+}
+
+.header-logo img{
+    margin-top: 0.5rem;
+}
+
+.header-nav{
+    display: none;
+}
+
+.header-nav :not(:last-child){
+    margin-right: 1.5rem;
+}
+
+.header-link{
+    font-weight: 500;
+    color: #242E52;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.header-link:hover{
+    color: #F3603B;
+}
+
+.header-btn{
+    display: none;
+}
+
+.burger-btn{
+    color: #FFFFFF;
+    background-color: #F3603B;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 1.5rem;
+    box-shadow: 0px 4px 7px rgba(255, 134, 64, 0.25);
+}
+
+.burger-btn i{
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+@keyframes appear {
+    0%{
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes disappear {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+}
+
+.headerAppear{
+    animation: appear 300ms linear 1;
+    display: block;
+}
+
+.headerDisappear{
+    animation: disappear 300ms linear 1;
+    opacity: 0;
+
+}
+@media (min-width: 768px) {
+    .header-cont{
+        justify-content: space-between;
+    }
+
+    .header-nav{
+        display: flex;
+    }
+
+    .header-btn{
+        display: flex;
+    }
+
+    .burger-btn{
+        display: none;
+    }
+}
+
+@media (min-width: 1024px){
+    .header-cont{
+        padding: 2.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1300px;
+    }
+    .header-nav :not(:last-child){
+        margin-right: 1.5rem;
+    }
+
+    .header-link{
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+
+}
